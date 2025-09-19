@@ -1,0 +1,54 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1 class="title">Rock ✊ Paper ✋ Scissors ✌️</h1>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div id="scoreboard">
+      <div>Player: <span id="playerScore">0</span></div>
+      <div>Computer: <span id="computerScore">0</span></div>
+      <div id="streak">Streak: 0 (Best: 0)</div>
+    </div>
+    <div id="settings">
+      <label for="bestOf">Play to:</label>
+      <select id="bestOf">
+        <option value="3">Best of 3</option>
+        <option value="5" selected>Best of 5</option>
+        <option value="7">Best of 7</option>
+        <option value="inf">Infinite</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div class="result" id="result">Make your move</div>
+  <div class="last-round" id="lastRound"></div>
+
+  <!-- Choices -->
+  <div class="choices">
+    <button class="choice" data-choice="rock">✊<span>Rock</span></button>
+    <button class="choice" data-choice="paper">✋<span>Paper</span></button>
+    <button class="choice" data-choice="scissors">✌️<span>Scissors</span></button>
+  </div>
+
+  <!-- Reset -->
+  <button class="small" id="resetBtn" style="display:none;">Reset</button>
+
+  <!-- Match History -->
+  <h2>Match History</h2>
+  <div id="history"></div>
+
+  <!-- Achievements -->
+  <h2>Achievements</h2>
+  <div id="achievements"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
