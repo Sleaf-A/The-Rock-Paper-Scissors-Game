@@ -1,0 +1,112 @@
+:root{
+  --bg:#0b0f12;
+  --card:#0f1720;
+  --accent:#00ffc2;
+  --muted:#99a0ab;
+  --win:#28c76f;
+  --lose:#ff6b6b;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:18px;
+  background:linear-gradient(180deg,#030405 0%, var(--bg) 100%);
+  color: #e6eef6;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  padding:24px;
+}
+
+.title{
+  font-size:36px;
+  letter-spacing:2px;
+  margin:0;
+  color:var(--accent);
+  text-shadow:0 6px 20px rgba(0,255,194,0.06);
+}
+
+.top-bar{
+  display:flex;
+  gap:22px;
+  align-items:center;
+  justify-content:center;
+}
+
+#scoreboard{
+  display:flex;
+  gap:18px;
+  font-weight:700;
+  color:#fff;
+}
+
+#settings{display:flex;gap:8px;align-items:center;color:var(--muted)}
+#bestOf{padding:6px;border-radius:6px;background:var(--card);color:#fff;border:1px solid rgba(255,255,255,0.04)}
+
+.small{
+  padding:6px 10px;border-radius:8px;border:none;background:#1f2937;color:#fff;cursor:pointer;
+}
+
+.result{
+  font-size:20px;
+  color:var(--muted);
+  min-height:28px;
+  text-align:center;
+}
+
+.choices{
+  display:grid;
+  grid-template-columns:repeat(3, 140px);
+  gap:18px;
+  justify-content:center;
+  margin-top:6px;
+}
+
+.choice{
+  background: linear-gradient(180deg, #111317, #13171b);
+  border-radius:14px;
+  padding:18px;
+  font-size:20px;
+  color:#fff;
+  border: 2px solid rgba(255,255,255,0.03);
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  transition: transform .12s ease, box-shadow .12s ease;
+  user-select:none;
+}
+
+.choice span{font-size:14px;color:var(--muted)}
+
+.choice:active{transform:scale(.96)}
+
+.choice.winner{
+  box-shadow:0 12px 30px rgba(0,255,194,0.14);
+  border-color: rgba(0,255,194,0.25);
+}
+
+.choice.loser{
+  box-shadow:0 12px 30px rgba(255,107,107,0.08);
+  border-color: rgba(255,107,107,0.15);
+  opacity:0.85;
+}
+
+.last-round{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:14px;
+  text-align:center;
+}
+
+/* responsive */
+@media (max-width:520px){
+  .choices{grid-template-columns:repeat(3, 100px);gap:12px}
+  .choice{padding:12px}
+  .title{font-size:28px}
+}
